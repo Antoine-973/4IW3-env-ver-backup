@@ -3,6 +3,7 @@ vendor/
 db_data
 public/storage
 db_data/
+.idea
 
 composer.phar
 composer.phar
