@@ -1,0 +1,12 @@
+.env
+vendor/
+public/storage
+
+composer.phar
+composer.phar
+
+storage/
+.env.*.php
+.env.php
+
+.DS_Store
