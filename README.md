@@ -1,17 +1,9 @@
 <p align="center">
-  <h3 align="center">Projet final d'environnement de collaboration et solution de versionning</h3>
+  <h1 align="center">Projet final d'environnement de collaboration et solution de versionning</h3>
 
   <p align="center">
-    Entreprise de Services Numériques (ESN)
-    <br />
-    <a href="https://github.com/doc"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/demo">View Demo</a>
-    ·
     <a href="https://github.com/report">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/issues">Request Feature</a>
+    <a href="https://gitlab.com/iw-intensive-week-1-2021/groupe-22-iw3-4/-/issues">Request Feature</a>
   </p>
 </p>
 
@@ -22,31 +14,30 @@
   <summary>Sommaire</summary>
   <ol>
     <li>
-      <a href="#about-the-project">À propos</a>
+      <a href="#a-propos">A propos</a>
       <ul>
-        <li><a href="#built-with">Outils</a></li>
+        <li><a href="#outils">Outils</a></li>
       </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prérequis</a></li>
+        <li><a href="#prerequis">Prerequis</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#endpoints">Endpoints</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#contribuer-au-projet">Contribuer au projet</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
 
 
 <!-- ABOUT THE PROJECT -->
-## À Propos
+## A Propos
 
 <p>Consultant de l'Entreprise de Services Numériques Thamini Steria System, nous sommes envoyés en mission d’expertise pour mettre en place des bonnes pratiques sur un projet fraîchement
 acquis par la société cliente Sorcier Technologie.</p>
@@ -70,15 +61,36 @@ Voici la liste des technologies utilisés pour le développement de ce projet.
 
 Voici la marche à suivre pour obtenir une copie locale opérationnelle du projet et commencer à travailler, suivez ces étapes simples.
 
-### Prérequis
+### Prerequis
 
-Les prérequis à remplir avant de commencer l'installation.
+Les prérequis à remplir avant de commencer l'installation sur sa machine.
+
+- Docker
+- Docker-Compose
+- Git
 
 ### Installation
 
-<!-- USAGE EXAMPLES -->
-## But de l'application
+Avec make :
 
+- `make env`
+- Puis modifier le fichier .env avec les paramètres de connexions de votre environnement
+- `make init`
+
+Sans make :
+
+- Renommer le fichier .env.example en .env et modifier le fichier .env avec les paramètres de connexions de votre environnement
+- `docker-compose up -d --build`
+- `docker-compose exec web php artisan migrate`
+- `docker-compose exec web php artisan db:seed`
+
+<!-- USAGE EXAMPLES -->
+## Endpoints
+
+#### 2 endpoints sont disponibles dans l'application.
+
+- Un endpoint sur la route / permet de récupérer la liste de films de la Base de données
+- Un endpoint sur la route /template permet de récupérer le timestamp actuel.
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -99,7 +111,7 @@ Voir les [issues](https://gitlab.com/iw-intensive-week-1-2021/groupe-22-iw3-4/-/
 7. Commit vos changements (`git commit -S`)
 8. Ecrire un message de commit propre et une description complète, puis sauvegarder.
 9. Push vos commits (`git push origin feature/FeatureName`)
-10. Ouvrir une pull request.
+10. Ouvrir une merge request vers develop.
 
 
 
