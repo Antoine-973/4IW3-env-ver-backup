@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y libmemcached11 libmemcachedutil2 build-
 RUN pecl install memcached
 RUN echo extension=memcached.so >> /usr/local/etc/php/conf.d/memcached.ini
 
+#Install xdebug
 RUN pecl install xdebug \
     && docker-php-ext-enable xdebug
 
