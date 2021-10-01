@@ -12,6 +12,9 @@ RUN apt-get update && apt-get install -y libmemcached11 libmemcachedutil2 build-
 RUN pecl install memcached
 RUN echo extension=memcached.so >> /usr/local/etc/php/conf.d/memcached.ini
 
+RUN pecl install xdebug \
+    && docker-php-ext-enable xdebug
+
 # Workaround for write permission on write to MacOS X volumes
 # See https://github.com/boot2docker/boot2docker/pull/534
 RUN usermod -u 1000 www-data
