@@ -2,6 +2,7 @@
 vendor/
 db_data
 public/storage
+db_data/
 
 composer.phar
 composer.phar
