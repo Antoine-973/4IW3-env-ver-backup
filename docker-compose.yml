@@ -10,6 +10,9 @@ services:
      - ./server/000-default.conf:/etc/apache2/sites-available/000-default.conf
      - ./server/apache2.conf:/etc/apache2/apache2.conf
      - ./server/php.ini:/usr/local/etc/php/php.ini
+     - ./server/xdebug/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+     - ./server/xdebug/error_reporting.ini:/usr/local/etc/php/conf.d/error_reporting.ini
+
     depends_on:
      - database
     env_file:
@@ -42,4 +45,9 @@ services:
     image: composer 
     command: install --ignore-platform-reqs
     volumes:
-      - ./www:/app 
+      - ./www:/app
+
+  phpstan:
+    build: stan
+    depends_on:
+      - web
