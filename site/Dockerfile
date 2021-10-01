@@ -1,4 +1,4 @@
-FROM php:5.6-apache
+FROM php:8-apache
 
 # Install PDO MySQL driver
 # See https://github.com/docker-library/php/issues/62
@@ -7,13 +7,9 @@ RUN docker-php-ext-install pdo pdo_mysql
 # Installation yaml
 RUN apt-get update -y && apt-get install -y libpng-dev libfreetype6-dev libyaml-dev
 
-RUN docker-php-ext-configure gd \
-        --with-freetype-dir=/usr/include/freetype2 \
-    && docker-php-ext-install gd
-
 #Instalattion memcached
 RUN apt-get update && apt-get install -y libmemcached11 libmemcachedutil2 build-essential libmemcached-dev libz-dev
-RUN pecl install memcached-2.2.0
+RUN pecl install memcached
 RUN echo extension=memcached.so >> /usr/local/etc/php/conf.d/memcached.ini
 
 # Workaround for write permission on write to MacOS X volumes
