@@ -1,6 +1,8 @@
 FROM php:5.6-apache
 
-RUN docker-php-ext-install pdo mysqli pdo_mysql
+# Install PDO MySQL driver
+# See https://github.com/docker-library/php/issues/62
+RUN docker-php-ext-install pdo pdo_mysql 
 
 # Installation yaml
 RUN apt-get update -y && apt-get install -y libpng-dev libfreetype6-dev libyaml-dev

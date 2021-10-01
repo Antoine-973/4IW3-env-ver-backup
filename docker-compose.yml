@@ -3,7 +3,6 @@ services:
 
   web:
     build: site
-    container_name: apache
     ports :
      - "80:80"
     volumes:
@@ -13,16 +12,17 @@ services:
      - ./server/php.ini:/usr/local/etc/php/php.ini
     depends_on:
      - database
+    env_file:
+      - ./www/.env
 
   database:
     image: mysql:5.7
-    container_name: mysql
     ports :
       - "3306:3306"
     environment:
       MYSQL_DATABASE: laravel
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_USER: root
+      MYSQL_USER: laravel
       MYSQL_PASSWORD: password
     volumes:
       - ./db_data:/var/lib/mysql
@@ -30,7 +30,6 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
-    container_name: phpmyadmin
     depends_on:
       - database
     ports:
@@ -40,8 +39,7 @@ services:
   
   composer:
     restart: 'no'
-    container_name: composer
     image: composer 
-    command: install --ignore-platform-reqs #Permet d'installer peut importe la version PHP
+    command: install --ignore-platform-reqs
     volumes:
       - ./www:/app 
