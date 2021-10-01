@@ -12,3 +12,4 @@
 */
 
 $router->get('/', ListingController::class);
+$router->get('/timestamp', TimestampController::class);
