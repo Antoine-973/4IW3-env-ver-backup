@@ -91,14 +91,15 @@ Voir les [issues](https://gitlab.com/iw-intensive-week-1-2021/groupe-22-iw3-4/-/
 ## Contribuer au projet
 
 1. Activer la signature de vos commits par défaut : (`git config --global commit.gpgsign true`)
-2. Cloner le projet (`git clone https://gitlab.com/iw-intensive-week-1-2021/groupe-22-iw3-4.git`)
-3. Se positionner sur la develop (`git checkout develop`)
-3. Créer votre branche de feature (`git checkout -b feature/FeatureName`)
-4. Ajouter les modifications à commit (`git add {filename}`)
-5. Commit vos changements (`git commit -S`)
-6. Ecrire un message de commit propre et une description complète, puis sauvegarder.
-7. Push vos commits (`git push origin feature/FeatureName`)
-8. Ouvrir une pull request.
+2. Activer l'utilisation du git commit template : (`git config commit.template .gitmessage`)
+3. Cloner le projet (`git clone https://gitlab.com/iw-intensive-week-1-2021/groupe-22-iw3-4.git`)
+4. Se positionner sur la develop (`git checkout develop`)
+5. Créer votre branche de feature (`git checkout -b feature/FeatureName`)
+6. Ajouter les modifications à commit (`git add {filename}`)
+7. Commit vos changements (`git commit -S`)
+8. Ecrire un message de commit propre et une description complète, puis sauvegarder.
+9. Push vos commits (`git push origin feature/FeatureName`)
+10. Ouvrir une pull request.
 
 
 
@@ -119,4 +120,4 @@ Distribuer sous la MIT License. Voir `LICENSE` pour plus d'informations.
 
 
 Project Link: [https://gitlab.com/iw-intensive-week-1-2021/groupe-22-iw3-4](https://gitlab.com/iw-intensive-week-1-2021/groupe-22-iw3-4)
-Backup Project Link:[https://github.com/Antoine-973/4IW3-env-ver-backup]
+Backup Project Link:[https://github.com/Antoine-973/4IW3-env-ver-backup](https://github.com/Antoine-973/4IW3-env-ver-backup)
