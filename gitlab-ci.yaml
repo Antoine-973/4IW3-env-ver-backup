@@ -1,0 +1,23 @@
+image: alpine
+
+stages:
+  - build
+  - test
+  - deploy
+
+job:build:
+  stage: build
+  script: echo "building app"
+
+job:test:unit:
+  stage: test
+  script: echo "no test available yet"
+
+job:test:endpoint:
+  stage: test
+  script: echo "endpoint OK"
+
+job:deploy:
+  stage: deploy
+  script: echo "app is now deploy"
+
